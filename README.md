@@ -15,11 +15,15 @@ For basic RF socket control, the kind with dials to select channel and id, just 
 
 #MQTT Format
 Basic socket control is performed by sending a payload of on or off to:
+
     livingroom/control/switch/X/Y
+
 where X and Y are the channel and ID of the socket, eg.
+
     livingroom/control/switch/4/1 <- "on"
 
 #OpenHAB Item Definition
+
     Switch Switch41 "Living room friendly socket name" <socket> (Cinema) {mqtt=">[broker:livingroom/control/switch/4/1:command:ON:on],>[broker:livingroom/control/switch/4/1:command:OFF:off]"}
 
 

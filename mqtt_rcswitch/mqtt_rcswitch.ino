@@ -28,6 +28,7 @@ void setup() {
   client.begin(server,wifiClient);
   Serial.print("Connecting to ");
   Serial.println(ssid);  
+  WiFi.mode(WIFI_STA); //disables the built-in "doitwifi" being broadcast. 
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
